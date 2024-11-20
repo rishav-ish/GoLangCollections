@@ -6,7 +6,7 @@ import (
 
 type Node struct {
 	Val      any
-	nextNode *Node
+	NextNode *Node
 }
 
 type LinkedList struct {
@@ -17,14 +17,14 @@ func (linkedList *LinkedList) AddToHead(Val any) {
 	var node = Node{}
 	node.Val = Val
 	if linkedList.HeadNode != nil {
-		node.nextNode = linkedList.HeadNode
+		node.NextNode = linkedList.HeadNode
 	}
 	linkedList.HeadNode = &node
 }
 
 func (linkedList *LinkedList) IterateList() {
 	var node *Node
-	for node = linkedList.HeadNode; node != nil; node = node.nextNode {
+	for node = linkedList.HeadNode; node != nil; node = node.NextNode {
 		fmt.Println(node.Val)
 	}
 }
@@ -32,8 +32,8 @@ func (linkedList *LinkedList) IterateList() {
 func (linkedList *LinkedList) LastNode() *Node {
 	var node *Node
 	var lastNode *Node
-	for node = linkedList.HeadNode; node != nil; node = node.nextNode {
-		if node.nextNode == nil {
+	for node = linkedList.HeadNode; node != nil; node = node.NextNode {
+		if node.NextNode == nil {
 			lastNode = node
 		}
 	}
@@ -45,7 +45,7 @@ func (linkedList *LinkedList) AddToEnd(val any) {
 	node.Val = val
 	var lastNode = linkedList.LastNode()
 	if lastNode != nil {
-		lastNode.nextNode = node
+		lastNode.NextNode = node
 	} else {
 		linkedList.HeadNode = node
 	}
@@ -53,7 +53,7 @@ func (linkedList *LinkedList) AddToEnd(val any) {
 
 func (linkedList *LinkedList) NodeWithValue(val any) *Node {
 	var node *Node
-	for node = linkedList.HeadNode; node != nil; node = node.nextNode {
+	for node = linkedList.HeadNode; node != nil; node = node.NextNode {
 		if node.Val == val {
 			return node
 		}
