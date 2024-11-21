@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-
-	"example.com/godatastructures/collections"
-)
-
 func main() {
 	// var linkedList collections.LinkedList
 	// linkedList = collections.LinkedList{}
@@ -29,28 +23,36 @@ func main() {
 	// dLinkedList.AddToEnd("Test")
 	// dLinkedList.IterateList()
 
-	var set *collections.Set
-	set = &collections.Set{}
-	set.New()
-	set.AddElement("Rishav")
-	set.AddElement(1)
-	set.AddElement("1")
+	// var set *collections.Set
+	// set = &collections.Set{}
+	// set.New()
+	// set.AddElement("Rishav")
+	// set.AddElement(1)
+	// set.AddElement("1")
 
 	// fmt.Println(set)
 	// fmt.Println(set.ContainsElement(1))
 	// fmt.Println(set.ContainsElement("1"))
 	// fmt.Println(set.ContainsElement("Rishav"))
 
-	anotherSet := &collections.Set{}
-	anotherSet.New()
-	anotherSet.AddElement(1)
-	anotherSet.AddElement("Kumar")
+	// anotherSet := &collections.Set{}
+	// anotherSet.New()
+	// anotherSet.AddElement(1)
+	// anotherSet.AddElement("Kumar")
 
-	fmt.Println(set)
-	fmt.Println(anotherSet)
+	// fmt.Println(set)
+	// fmt.Println(anotherSet)
 
-	fmt.Println(set.Intersect(anotherSet))
-	fmt.Println(set.Union(anotherSet))
-	fmt.Println(set.Difference(anotherSet))
+	// fmt.Println(set.Intersect(anotherSet))
+	// fmt.Println(set.Union(anotherSet))
+	// fmt.Println(set.Difference(anotherSet))
+
+	// stack := collections.StackV2{}
+	// stack.Push("Rishav")
+	// stack.Push("Kumar")
+	// fmt.Println(stack.IsEmpty())
+	// fmt.Println(stack.Top())
+	// stack.Pop()
+	// fmt.Println(stack.IsEmpty())
 
 }
