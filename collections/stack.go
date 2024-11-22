@@ -93,3 +93,44 @@ func (s *StackV2[T]) insert(val T, compare func(a, b T) bool) {
 	s.insert(val, compare)
 	s.Push(temp)
 }
+
+func (s *StackV2[T]) RemoveElement(val int) (T, error) {
+	if s.IsEmpty() {
+		var zero_val T
+		return zero_val, errors.New("stack is empty")
+	}
+
+	if s.Size() < val {
+		var zero_val T
+		return zero_val, errors.New("contain lesser number of element")
+	}
+
+	if val == 1 {
+		return s.Pop()
+	}
+
+	temp, _ := s.Pop()
+	res, _ := s.RemoveElement(val - 1)
+	s.Push(temp)
+	return res, nil
+
+}
+
+func (s *StackV2[T]) Reverse() {
+	if s.IsEmpty() {
+		return
+	}
+	top, _ := s.Pop()
+	s.Reverse()
+	s.reverse_insert(top)
+}
+
+func (s *StackV2[T]) reverse_insert(val T) {
+	if s.IsEmpty() {
+		s.Push(val)
+		return
+	}
+	top, _ := s.Pop()
+	s.reverse_insert(val)
+	s.Push(top)
+}
